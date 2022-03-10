@@ -82,22 +82,24 @@ If there is nothing in the array, return an empty string ('')
 You can assume that no two strings will have the same length in the array
 */
 
-    function longestString(arr){
-        // Return the first sorted item of the Array
-        for( i=0; i < arr.length; i++){
-        arr.sort((a, b) => b.length - a.length)
-        }
-        return arr
-}
-    
-    
+function longestString(array) {
+    let longestWord = "";
+  
+    array.forEach(function(word) {
+      if(word.length > longestWord.length) {
+        longestWord = word;
+      }
+    });
+  
+    return longestWord;
+  }
 
 
 /* console.logs to test */
 console.log("longestString");
 console.log("////////////////////////////////////////////////////////////////////////////\n");
 //Add console.logs here to test!  Feel free to format this section however you like
-console.log(longestString(["hello"], ["zebra"], ["alphabet"]))
+console.log(longestString(["hello", "zebra", "alphabet"]))
 console.log("\n////////////////////////////////////////////////////////////////////////////\n");
 
 
